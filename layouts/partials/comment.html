@@ -5,6 +5,15 @@
 
 {{- if $comment.enable -}}
     <div id="comments">
+        {{- /* Remark42 Comment System */ -}}
+        {{- $remark42 := $comment.remark42 | default dict -}}
+        {{- if $remark42.enable -}}
+            <div id="remark42"></div>
+            <noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://github.com/umputun/remark42">Remark42</a>.
+            </noscript>
+        {{- end -}}
+
         {{- /* Disqus Comment System */ -}}
         {{- $disqus := $comment.disqus | default dict -}}
         {{- if $disqus.enable -}}
